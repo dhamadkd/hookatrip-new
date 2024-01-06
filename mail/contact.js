@@ -20,9 +20,9 @@ $(function () {
                 url: "https://api.hookatrip.com/email/send",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
-                    message: message
+                    "name": name,
+                    "phone": phone,
+                    "message": message
                 },
                 cache: false,
                 success: function () {
