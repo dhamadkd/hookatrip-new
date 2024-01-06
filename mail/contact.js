@@ -7,20 +7,21 @@ $(function () {
         submitSuccess: function ($form, event) {
             event.preventDefault();
             var name = $("input#name").val();
-            var email = $("input#email").val();
-            var subject = $("input#subject").val();
+            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            console.log("name: " + name);
+            console.log("phone: " + phone);
+            console.log("message: " + message);
 
             $this = $("#sendMessageButton");
             $this.prop("disabled", true);
 
             $.ajax({
-                url: "contact.php",
+                url: "https://api.hookatrip.com/email/send",
                 type: "POST",
                 data: {
                     name: name,
-                    email: email,
-                    subject: subject,
+                    phone: phone,
                     message: message
                 },
                 cache: false,
